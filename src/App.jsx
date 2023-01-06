@@ -1,32 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { useState,useEffect } from 'react'
 import './App.css'
+import Drinks from './assets/Components/Drinks'
+import axios from 'axios'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [namesDrink, setNamesDrink] = useState([])
+  const [name, setName] = useState("")
+  useEffect((  ) =>{
+    axios
+    .get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`)
+    .then(resp => console.log(resp.data))
+    .catch(error => console.error(error))
+  }, [])
+
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <form action="">
+        <input type="text" />
+        <button type="submit"><i class="fa-solid fa-martini-glass-citrus"></i></button>
+      </form>
+      
+      {
+        namesDrink.map( (namesDrink, index) => (<Drinks key={`namesDrink-${index}`} data = {namesDrink} />) )
+      }
+      
     </div>
   )
 }
