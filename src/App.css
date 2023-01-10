@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    padding: 2rem;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  }
+
+  .Drinks {
+    margin: 1rem auto;
+    width: 300px;
+    border: 1px solid #707604;
+    text-align: center;
+    border-radius: 20px;
+  }
+
+  img {
+    max-width: 100%; 
+  }
+
+  .Drinks > img {
+    width: 300px;
+    height: 350px;
+    border-radius: 20px 20px 0px 0px;
+  }
+
+ h1 {
+    margin: 1rem auto;
+    font-size: 30px;
+  }
+  span {
+    font-size: 34px;
+  }
+
+ p {
+    padding: 5px;
+  }
+
+  form {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 1rem;
+    border: none;
+  }
+
+  form > input {
+    border: 1px solid;
+    border-radius: 20px 2px 2px 20px;
+  }
+
+  input {
+    padding: 5px;
+  }
+
+  button {
+    border-radius: 2px 20px 20px 2px;
+    margin-left: 5px;
+    border: 1px solid;  }
+
+  .App-Drink {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
